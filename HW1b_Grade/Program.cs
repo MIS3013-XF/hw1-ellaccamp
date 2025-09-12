@@ -5,6 +5,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,10 +46,14 @@ namespace HW1b_Grade
             //calculate final grade
             double finalgrade = (homework*homeworkw) + (part*partw) + (quiz*quizw) + (midterm*midtermw) + (final*finalw);
 
-            Console.WriteLine($"{firstname} {lastname} ({studentid}), your final grade is {finalgrade}%");
+            string output = $"{firstname} {lastname} ({studentid}), your final grade is {finalgrade}%";
+            Console.WriteLine(output);
 
+            // Save to file
+            File.WriteAllText("grade.txt", output);
+
+            Console.WriteLine("Grade saved to grade.txt");
             Console.WriteLine("Press any key to continue...");
-
             Console.ReadKey();
 
 
