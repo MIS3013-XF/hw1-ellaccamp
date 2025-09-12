@@ -49,7 +49,7 @@ namespace HW1b_Grade
 
             Console.WriteLine("Press any key to continue...");
 
-
+            Console.ReadKey();
 
 
 
